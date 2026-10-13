@@ -38,7 +38,7 @@ def tokenize(input_string):
         code += f"""
         else:
             t = ("UNKNOWN", m.group(), linha, m.span())
-        if not dic['SKIP'] and t[0] != 'UNKNOWN': reconhecidos.append(t)
+        if not dic['SKIP'] and not dic['COMMENT'] and t[0] != 'UNKNOWN': reconhecidos.append(t)
     return reconhecidos
 
 for linha in sys.stdin:
